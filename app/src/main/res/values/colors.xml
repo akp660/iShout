@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+        <!-- In res/values/colors.xml -->
+    <color name="fab_new_background">#FF9800</color>
+    <color name="fab_main_background">#5C73FF</color>
 </resources>

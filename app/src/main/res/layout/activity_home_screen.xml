@@ -9,6 +9,7 @@
     tools:context=".Home_Screen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,9 +75,9 @@
             android:layout_width="45sp"
             android:layout_height="45sp"
             android:layout_marginEnd="25dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50sp"
             app:cardElevation="8dp"
-            app:cardBackgroundColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -105,6 +106,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
@@ -142,36 +144,104 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="60sp"
-        android:layout_height="60sp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="30dp"
-        app:cardBackgroundColor="#5C73FF"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fab_UI"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <!-- Main Floating Action Button -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/add_icon"
+            app:backgroundTint="#213448"
+            app:tint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="34sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <!-- FAB Option: Write Text -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/edit_icon"
+            android:visibility="visible"
+            app:backgroundTint="#547792"
+            app:tint="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/fab_main"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- FAB Option: Search -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/search_icon"
+            android:visibility="visible"
+            app:backgroundTint="#94B4C1"
+            app:tint="#000"
+            app:layout_constraintBottom_toTopOf="@id/fab_write"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </androidx.cardview.widget.CardView>
+        <!-- Label for Search FAB -->
+        <TextView
+            android:id="@+id/fab_search_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/fab_label_background"
+            android:elevation="4dp"
+            android:padding="6dp"
+            android:text="  Search New User  "
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/fab_search"
+            app:layout_constraintEnd_toStartOf="@id/fab_search"
+            app:layout_constraintTop_toTopOf="@+id/fab_search" />
+
+        <!-- Label for Write FAB -->
+        <TextView
+            android:id="@+id/fab_write_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/fab_label_background"
+            android:elevation="4dp"
+            android:padding="6dp"
+            android:text="  Create Post  "
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/fab_write"
+            app:layout_constraintEnd_toStartOf="@id/fab_write"
+            app:layout_constraintTop_toTopOf="@+id/fab_write" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

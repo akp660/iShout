@@ -23,15 +23,5 @@ public class Notification_screen extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        ImageView Back = findViewById(R.id.back_Btn);
-        Back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Intent to navigate to Home_screen activity
-                Intent intent = new Intent(Notification_screen.this, Home_Screen.class);
-                startActivity(intent);
-            }
-        });
     }
 }
