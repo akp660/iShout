@@ -1,4 +1,4 @@
-package com.abhijeet.ishout;
+package com.abhijeet.ishout.Followers_Adaptor;
 
 public class Followers_ui_model {
     private String name;

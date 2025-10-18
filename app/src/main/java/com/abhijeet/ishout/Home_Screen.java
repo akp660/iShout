@@ -59,7 +59,7 @@ public class Home_Screen extends AppCompatActivity {
 
         // FAB actions (Add your real actions here)
         fabWrite.setOnClickListener(v -> {
-            // startActivity(new Intent(this, WriteActivity.class));
+            startActivity(new Intent(this, create_post.class));
         });
 
         fabSearch.setOnClickListener(v -> {

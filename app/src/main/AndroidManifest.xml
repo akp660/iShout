@@ -16,6 +16,7 @@
             android:exported="false" />
         <activity
             android:name=".create_post"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:exported="false" />
         <activity
             android:name=".Notification_screen"

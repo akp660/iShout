@@ -10,6 +10,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abhijeet.ishout.Followers_Adaptor.FollowersAdapter;
+import com.abhijeet.ishout.Followers_Adaptor.Followers_ui_model;
+
 import java.util.ArrayList;
 import java.util.List;
 

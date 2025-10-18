@@ -1,4 +1,4 @@
-package com.abhijeet.ishout;
+package com.abhijeet.ishout.Followers_Adaptor;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abhijeet.ishout.R;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;

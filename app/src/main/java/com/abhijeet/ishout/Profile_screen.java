@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -27,10 +28,10 @@ public class Profile_screen extends AppCompatActivity {
         });
 
         // Find the TextView
-        TextView textView = findViewById(R.id.following_number);
+        CardView cardView = findViewById(R.id.follower_list);
 
         // Set click listener
-        textView.setOnClickListener(new View.OnClickListener() {
+        cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Open Followers List Page
