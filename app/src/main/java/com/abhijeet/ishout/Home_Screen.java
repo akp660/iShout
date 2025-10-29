@@ -1,11 +1,19 @@
 package com.abhijeet.ishout;
 
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,12 +67,32 @@ public class Home_Screen extends AppCompatActivity {
 
         // FAB actions (Add your real actions here)
         fabWrite.setOnClickListener(v -> {
-            startActivity(new Intent(this, create_post.class));
+            showCreatePostDialog();
         });
 
         fabSearch.setOnClickListener(v -> {
             // startActivity(new Intent(this, SearchActivity.class));
         });
+    }
+
+    private void showCreatePostDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_post, null);
+        builder.setView(dialogView);
+
+        AlertDialog dialog = builder.create();
+
+        if (dialog.getWindow() != null) {
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.getWindow().setLayout(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+            dialog.getWindow().setGravity(Gravity.BOTTOM);
+            dialog.getWindow().getAttributes().windowAnimations = R.style.DialogSlideAnimation;
+        }
+
+        dialog.show();
     }
 
     private void toggleFabMenu() {
