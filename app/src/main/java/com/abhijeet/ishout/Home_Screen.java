@@ -5,17 +5,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
@@ -23,14 +25,24 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class Home_Screen extends AppCompatActivity {
 
     private boolean isFabMenuOpen = false;
+    private static final int VOICE_REQUEST_CODE = 1001;
 
     // FABs and labels
     FloatingActionButton fabMain, fabWrite, fabSearch;
     TextView fabWriteLabel, fabSearchLabel;
+
+    // Search dialog references
+    private AlertDialog searchDialog;
+    private TextInputEditText searchInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,16 +77,14 @@ public class Home_Screen extends AppCompatActivity {
         // FAB main click
         fabMain.setOnClickListener(v -> toggleFabMenu());
 
-        // FAB actions (Add your real actions here)
-        fabWrite.setOnClickListener(v -> {
-            showCreatePostDialog();
-        });
+        // Write Post FAB action
+        fabWrite.setOnClickListener(v -> showCreatePostDialog());
 
-        fabSearch.setOnClickListener(v -> {
-            // startActivity(new Intent(this, SearchActivity.class));
-        });
+        // Search FAB action
+        fabSearch.setOnClickListener(v -> showSearchDialog());
     }
 
+    /** --- Create Post Dialog --- **/
     private void showCreatePostDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View dialogView = getLayoutInflater().inflate(R.layout.dialog_create_post, null);
@@ -95,6 +105,69 @@ public class Home_Screen extends AppCompatActivity {
         dialog.show();
     }
 
+    /** --- Search Dialog with Voice Input --- **/
+    private void showSearchDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        View dialogView = getLayoutInflater().inflate(R.layout.activity_dialog_search, null);
+        builder.setView(dialogView);
+
+        searchDialog = builder.create();
+
+        if (searchDialog.getWindow() != null) {
+            searchDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            searchDialog.getWindow().setLayout(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+            searchDialog.getWindow().setGravity(Gravity.BOTTOM);
+            searchDialog.getWindow().getAttributes().windowAnimations = R.style.DialogSlideAnimation;
+        }
+
+        searchDialog.show();
+
+        // Initialize search input
+        TextInputLayout searchInputLayout = dialogView.findViewById(R.id.search_input_layout);
+        searchInput = dialogView.findViewById(R.id.edit_search_text);
+
+        if (searchInput != null) {
+            searchInput.requestFocus();
+            searchDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        }
+
+        // Handle mic icon click
+        if (searchInputLayout != null) {
+            searchInputLayout.setEndIconOnClickListener(v -> startVoiceInput());
+        }
+    }
+
+    /** --- Start Voice Recognition --- **/
+    private void startVoiceInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak now...");
+        try {
+            startActivityForResult(intent, VOICE_REQUEST_CODE);
+        } catch (Exception e) {
+            Toast.makeText(this, "Voice input not supported on this device", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == VOICE_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            ArrayList<String> results = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            if (results != null && !results.isEmpty()) {
+                if (searchInput != null) {
+                    searchInput.setText(results.get(0)); // Set recognized text
+                }
+            }
+        }
+    }
+
+    /** --- FAB Menu Logic --- **/
     private void toggleFabMenu() {
         if (isFabMenuOpen) {
             // Hide in reverse order
@@ -102,10 +175,9 @@ public class Home_Screen extends AppCompatActivity {
             hideFabWithZoom(fabWrite, fabWriteLabel);
             fabMain.animate().rotation(0).setDuration(200).start();
         } else {
-            // Show with slight delay for second item
+            // Show with staggered effect
             showFabWithZoom(fabWrite, fabWriteLabel, 0);
             showFabWithZoom(fabSearch, fabSearchLabel, 100);
-            // fabMain.animate().rotation(45).setDuration(200).start();
         }
         isFabMenuOpen = !isFabMenuOpen;
     }

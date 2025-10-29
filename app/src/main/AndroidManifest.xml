@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,12 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IShout">
         <activity
+            android:name=".dialog_search"
+            android:exported="false" />
+        <activity
             android:name=".Follower_list"
             android:exported="false" />
         <activity
             android:name=".create_post"
-            android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".Notification_screen"

@@ -24,7 +24,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="10dp">
 
             <!-- Modern Material Text Field (No Bottom Line, No Floating Label) -->
             <com.google.android.material.textfield.TextInputLayout
@@ -58,6 +58,7 @@
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:hint="What's on your mind?" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -67,6 +68,7 @@
                 android:id="@+id/btn_send"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:visibility="gone"
                 android:layout_marginEnd="4dp"
                 app:backgroundTint="@color/fab_main_background"
                 app:layout_constraintBottom_toBottomOf="parent"
