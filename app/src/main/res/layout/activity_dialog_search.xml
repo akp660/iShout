@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:layout_height="wrap_content">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="16dp"
         app:cardBackgroundColor="@color/white"
@@ -18,6 +18,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/fab_main_background"
         app:strokeWidth="1dp">
 
@@ -33,9 +34,6 @@
                 android:layout_marginEnd="10dp"
                 app:boxBackgroundColor="#F8F8F8"
                 app:boxBackgroundMode="filled"
-                app:endIconDrawable="@drawable/microphone_icon"
-                app:endIconTint="@color/black"
-                app:endIconMode="custom"
                 app:boxCornerRadiusBottomEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
                 app:boxCornerRadiusTopEnd="16dp"
@@ -43,6 +41,9 @@
                 app:boxStrokeColor="@android:color/transparent"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
+                app:endIconDrawable="@drawable/microphone_icon"
+                app:endIconMode="custom"
+                app:endIconTint="@color/black"
                 app:hintEnabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
