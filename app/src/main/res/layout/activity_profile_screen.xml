@@ -79,7 +79,7 @@
             android:layout_height="70sp"
             android:layout_marginStart="25dp"
             android:layout_marginTop="20dp"
-            app:cardBackgroundColor="#8055D3"
+            app:cardBackgroundColor="#000"
             app:cardCornerRadius="100sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -95,7 +95,7 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="-3dp"
                     android:elevation="5dp"
-                    android:src="@drawable/profile_image"
+                    android:src="@drawable/profile_pic3"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

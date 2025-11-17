@@ -20,9 +20,6 @@
             android:name=".Follower_list"
             android:exported="false" />
         <activity
-            android:name=".create_post"
-            android:exported="false" />
-        <activity
             android:name=".Notification_screen"
             android:exported="false" />
         <activity
