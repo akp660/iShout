@@ -27,17 +27,17 @@ public class Profile_screen extends AppCompatActivity {
             return insets;
         });
 
-        // Find the TextView
-        CardView cardView = findViewById(R.id.follower_list);
-
-        // Set click listener
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Open Followers List Page
-                Intent intent = new Intent(Profile_screen.this, Follower_list.class);
-                startActivity(intent);
-            }
-        });
+//        // Find the TextView
+//        CardView cardView = findViewById(R.id.follower_list);
+//
+//        // Set click listener
+//        cardView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Open Followers List Page
+//                Intent intent = new Intent(Profile_screen.this, Follower_list.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }

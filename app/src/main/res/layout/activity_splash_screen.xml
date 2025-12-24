@@ -5,24 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF1D0"
+    android:background="@color/black"
     tools:context=".Splash_screen">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="-20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/splashscreen_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
@@ -47,7 +31,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:text="with friends accross India"
-        android:textColor="#505050"
+        android:textColor="#E0E0E0"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +47,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="25dp"
         android:text="- iShout amplifies every Indian voice nationwide."
-        android:textColor="#242424"
+        android:textColor="#878787"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

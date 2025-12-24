@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home_Screen">
@@ -20,7 +21,7 @@
             android:layout_width="45sp"
             android:layout_height="45sp"
             android:layout_marginStart="20dp"
-            app:cardBackgroundColor="#3C54E6"
+            app:cardBackgroundColor="#282828"
             app:cardCornerRadius="50sp"
             app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +53,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="30dp"
             android:text="Hello, Abhijeet"
-            android:textColor="#050505"
+            android:textColor="#E0E0E0"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +65,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:text="Today, 27 Sep."
-            android:textColor="#454545"
+            android:textColor="#B3B3B3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -74,7 +75,7 @@
             android:layout_width="45sp"
             android:layout_height="45sp"
             android:layout_marginEnd="25dp"
-            app:cardBackgroundColor="@color/white"
+            app:cardBackgroundColor="#282828"
             app:cardCornerRadius="50sp"
             app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -118,42 +119,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="250sp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:rotationX="0"
-            android:src="@drawable/no_post_display"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="100dp"
-            android:text="No Post To Display."
-            android:textColor="#242424"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fab_UI"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="100dp"
         android:layout_marginTop="150dp"
+        android:elevation="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <!-- Main Floating Action Button -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -164,9 +143,9 @@
             android:layout_marginBottom="20dp"
             android:src="@drawable/add_icon"
             app:backgroundTint="#213448"
-            app:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="#FFFFFF" />
 
         <!-- FAB Option: Write Text -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -178,9 +157,9 @@
             android:src="@drawable/edit_icon"
             android:visibility="visible"
             app:backgroundTint="#547792"
-            app:tint="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/fab_main"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="#FFFFFF" />
 
         <!-- FAB Option: Search -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -192,9 +171,9 @@
             android:src="@drawable/search_icon"
             android:visibility="visible"
             app:backgroundTint="#94B4C1"
-            app:tint="#000"
             app:layout_constraintBottom_toTopOf="@id/fab_write"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="#000" />
 
         <!-- Label for Search FAB -->
         <TextView
@@ -257,8 +236,8 @@
                     android:id="@+id/cardView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#F6F6FF"
-                    app:strokeColor="@color/white"
+                    app:cardBackgroundColor="#282828"
+                    app:strokeColor="#3A3A3A"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="15dp"
@@ -305,7 +284,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="5dp"
                             android:text="Aditya Prashad"
-                            android:textColor="#3E3E3E"
+                            android:textColor="#BFBFBF"
                             app:layout_constraintStart_toEndOf="@+id/cardView3"
                             app:layout_constraintTop_toTopOf="@+id/cardView3" />
 
@@ -315,7 +294,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="\@aditya_prasad_001"
-                            android:textColor="#717171"
+                            android:textColor="#8C8C8C"
                             app:layout_constraintBottom_toBottomOf="@+id/cardView3"
                             app:layout_constraintStart_toEndOf="@+id/cardView3" />
 
@@ -363,7 +342,7 @@
                             android:layout_marginEnd="15dp"
                             android:layout_marginBottom="70dp"
                             android:text="Congratulations to our Archery team on their best ever performance at the Asian Archery Championships 2025. They have brought home 10 medals, including 6 Golds. Notable among these was the historic Recurve Men's Gold after 18 years. At the same time, there were strong showings in individual events and successful Compound title defenses too. This is indeed a very special feat, which will motivate many upcoming athletes."
-                            android:textColor="#000000"
+                            android:textColor="#D3D3D3"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -404,6 +383,7 @@
                             android:layout_height="50sp"
                             android:layout_marginStart="10dp"
                             android:layout_marginEnd="70dp"
+                            app:cardBackgroundColor="@color/black"
                             android:layout_marginBottom="10dp"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -447,8 +427,8 @@
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="15sp"
                     app:cardElevation="12sp"
-                    app:cardBackgroundColor="#F6F6FF"
-                    app:strokeColor="@color/white"
+                    app:cardBackgroundColor="#282828"
+                    app:strokeColor="#3A3A3A"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
@@ -494,7 +474,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="5dp"
                             android:text="Dr. Ramesh Pokhriyal Nishank"
-                            android:textColor="#3E3E3E"
+                            android:textColor="#BFBFBF"
                             app:layout_constraintStart_toEndOf="@+id/cardView2"
                             app:layout_constraintTop_toTopOf="@+id/cardView2" />
 
@@ -504,7 +484,7 @@
                             android:layout_marginStart="10dp"
                             android:layout_marginBottom="5dp"
                             android:text="\@DrRPNishank"
-                            android:textColor="#717171"
+                            android:textColor="#8C8C8C"
                             app:layout_constraintBottom_toBottomOf="@+id/cardView2"
                             app:layout_constraintStart_toEndOf="@+id/cardView2" />
 
@@ -516,7 +496,7 @@
                             android:layout_marginTop="70dp"
                             android:layout_marginEnd="15dp"
                             android:text="With Modi government completing 11 years, Union Home Minister @AmitShah highlights reforms, rebuts claims of bias in tax devolution to the South, outlines BJP’s electoral strategy, and insists Special Intensive Revision will do good. Read. http://newindianexpress.com/amp/story/nati …"
-                            android:textColor="#000000"
+                            android:textColor="#D3D3D3"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
