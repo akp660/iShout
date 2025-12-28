@@ -10,6 +10,7 @@
 
     <!-- Login Popup -->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -125,6 +126,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,6 +135,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/profilePicContainer"
             android:layout_width="150sp"
             android:layout_height="150sp"
             android:layout_marginTop="30dp"
@@ -149,6 +152,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/profilePic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/profile_pic3"
